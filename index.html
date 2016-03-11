@@ -20,6 +20,8 @@
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+		<link rel="stylesheet" href="css/style.css">
+
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -40,39 +42,178 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-                <section>
-                    <h1>git</h1> 
-                    <h3>The SVN of modern times</h3>
-                    <p>
-                        <small>liviu.iosif@<a href="http://www.code932.com" target="_blank">code932.com</a></small>
-                    </p>
-                </section>
-                <section>
-                    <h3>Agenda</h3>
-                    <ol>
-                        <li>Instalare</li>
-                        <li>User info</li>
-                        <li>Comenzi</li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ol>
-                </section>
-                <section>
-                    <h2>1. instalare</h2> 
-                    <div>
-                        <h4>Windows</h4>
-                        <code class="hljs" style="word-wrap: break-word;">
-                            Download from https://git-for-windows.github.io/ and install
-                        </code>
-                        <h4>Linux</h4>
-                        <code class="hljs" style="word-wrap: break-word;">
-                            $ sudo [apt-get|yum] install git-all
-                        </code>
-                        <h4>Mac</h4>
-                        <code class="hljs" style="word-wrap: break-word;">xcode-select --install</code>
-                    </div>
-                </section>
+        <section>
+            <h1>git</h1>
+            <h3>The SVN of modern times</h3>
+            <p>
+                <small>liviu.iosif@<a href="http://www.code932.com" target="_blank">code932.com</a></small>
+            </p>
+        </section>
+        <section>
+            <h3>Agenda</h3>
+            <ol>
+								<li>A really short history of Git</li>
+								<li>How does it work</li>
+                <li>Up and running</li>
+                <li>Going with the flow</li>
+                <li>Let's change the history</li>
+                <li>Patches</li>
+                <li>Best practices</li>
+                <li>Bonus</li>
+            </ol>
+        </section>
+				<section>
+					<h2>A really short history of Git</h2>
+				</section>
+				<section>
+					<section>
+						<h2>How does it work</h2>
+					</section>
+					<section data-background="#fff">
+						<h4>Differences (SVN)</h4>
+						<img src="https://git-scm.com/book/en/v2/book/01-introduction/images/deltas.png" alt="" />
+					</section>
+					<section data-background="#fff">
+						<h4>Snapshots (Git)</h4>
+						<img src="https://git-scm.com/book/en/v2/book/01-introduction/images/snapshots.png" alt="" />
+					</section>
+					<section data-background="#fff">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Git_data_flow.png" alt="" style="width: 80%;" />
+					</section>
+					<section data-background="#fff">
+						<h4>The 3 stages</h4>
+						<img src="https://git-scm.com/book/en/v2/book/01-introduction/images/areas.png" alt="" />
+					</section>
+				</section>
+        <section>
+					<section>
+						<h2>Up and running</h2>
+					</section>
+					<section>
+						<h2>Install</h2>
+						<pre><code class="hljs"data-trim contenteditable>
+// Windows
+Download from https://git-for-windows.github.io/ and install
+
+// Linux
+$ sudo [apt-get|yum] install git-all
+
+// Mac
+xcode-select --install</code></pre>
+					</section>
+					<section>
+						<h4>Config</h4>
+						<pre><code class="hljs" data-trim contenteditable>
+$ git config --local user.name "John Doe"
+$ git config --local user.email "john@doe.com"
+						</code></pre>
+					</section>
+        </section>
+				<section>
+					<section>
+						<h2>Going with the flow</h2>
+					</section>
+					<section>
+						<h2>A few commands</h2>
+						<pre><code class="hljs" data-trim contenteditable>
+$ git help // shows help
+$ git clone // clones a central repository into a local one
+$ git status // shows the current status for changed/new/removed files`
+$ git add // stages file(s) for commit
+$ git commit
+$ git push // publishes the changes(commits) to the central repository
+$ git pull // fetches changes from central repository
+$ git branch // shows a list of existing branches
+$ git log // shows history
+$ git merge // merges 2 branches together
+						</code></pre>
+					</section>
+					<section>
+						<pre><code class="hljs" data-trim>
+// get the existing project
+$ git checkout https://github.com/iionut/git-presentation.git
+// create workdir
+$ mkdir demo
+// create a new file
+$ touch demo/file.php
+// change demo/file.php content
+						</code></pre>
+					</section>
+					<section>
+						<pre><code class="hljs" data-trim>
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+	modified:   index.html
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+
+        demo/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+						</code></pre>
+					</section>
+					<section>
+						<pre>
+							<code class="hljs" data-trim>
+$ git add demo
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD &lt;file&gt;..." to unstage)
+
+        new file:   demo/file.php
+
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+							</code>
+						</pre>
+					</section>
+					<section>
+						<pre>
+							<code class="hljs" data-trim>
+$ git commit -m "Demo - Created new PHP script"
+[master db0d959] Demo - Created new PHP file
+ 1 file changed, 3 insertions(+)
+ create mode 100644 demo/file.php
+
+
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add &lt;file&gt;..." to update what will be committed)
+  (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+							</code>
+						</pre>
+					</section>
+					<section>
+						<pre><code class="hljs" data-trim>
+$ git push origin master
+Password for 'https://iionut@github.com':
+Counting objects: 4, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 351 bytes | 0 bytes/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+To https://github.com/iionut/git-presentation.git
+   8fba580..db0d959  master -> master
+						</code></pre>
+					</section>
+				</section>
 
 				<section>
 					<h1>Reveal.js</h1>
@@ -425,6 +566,9 @@ Reveal.addEventListener( 'customevent', function() {
 				progress: true,
 				history: true,
 				center: true,
+
+				width: 1920,
+				height: 1080,
 
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
