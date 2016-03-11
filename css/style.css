@@ -1,0 +1,15 @@
+.pull-left {
+  text-align: left;
+}
+
+.pull-right {
+  text-align: right;
+}
+
+.reveal pre code {
+  max-height: 100%!important;
+}
+
+pre {
+  font-size: 1em!important;
+}
