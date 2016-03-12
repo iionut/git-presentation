@@ -49,98 +49,113 @@
                 <small>liviu.iosif@<a href="http://www.code932.com" target="_blank">code932.com</a></small>
             </p>
         </section>
-        <section>
+<!-- Agenda -->
+        <section class="pull-left">
             <h3>Agenda</h3>
             <ol>
-								<li>A really short history of Git</li>
-								<li>How does it work</li>
+				<li>A really short history of Git</li>
+				<li>How does it work</li>
                 <li>Up and running</li>
                 <li>Going with the flow</li>
-                <li>Let's change the history</li>
-                <li>Patches</li>
+				<li>Branches</li>
+                <li>Merges and patches</li>
                 <li>Best practices</li>
                 <li>Bonus</li>
             </ol>
         </section>
+<!-- End agenda -->
+<!-- Short history -->
 				<section>
 					<h2>A really short history of Git</h2>
 				</section>
+<!-- End short history -->
+<!-- How does it work -->
 				<section>
 					<section>
 						<h2>How does it work</h2>
 					</section>
-					<section data-background="#fff">
+					<section>
 						<h4>Differences (SVN)</h4>
-						<img src="https://git-scm.com/book/en/v2/book/01-introduction/images/deltas.png" alt="" />
+						<img class="image" src="https://git-scm.com/book/en/v2/book/01-introduction/images/deltas.png" alt="" />
 					</section>
-					<section data-background="#fff">
+					<section>
 						<h4>Snapshots (Git)</h4>
 						<img src="https://git-scm.com/book/en/v2/book/01-introduction/images/snapshots.png" alt="" />
 					</section>
-					<section data-background="#fff">
-						<img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Git_data_flow.png" alt="" style="width: 80%;" />
+					<section>
+						<img class="image" src="https://upload.wikimedia.org/wikipedia/commons/2/29/Git_data_flow.png" alt="" style="width: 80%;" />
 					</section>
-					<section data-background="#fff">
+					<section>
 						<h4>The 3 stages</h4>
-						<img src="https://git-scm.com/book/en/v2/book/01-introduction/images/areas.png" alt="" />
+						<img class="image" src="https://git-scm.com/book/en/v2/book/01-introduction/images/areas.png" alt="" />
 					</section>
 				</section>
+<!-- End how does it work -->
+<!-- Up and running -->
         <section>
-					<section>
-						<h2>Up and running</h2>
-					</section>
-					<section>
-						<h2>Install</h2>
-						<pre><code class="hljs"data-trim contenteditable>
-// Windows
-Download from https://git-for-windows.github.io/ and install
-
-// Linux
-$ sudo [apt-get|yum] install git-all
-
-// Mac
-xcode-select --install</code></pre>
-					</section>
-					<section>
-						<h4>Config</h4>
-						<pre><code class="hljs" data-trim contenteditable>
+			<section>
+				<h2>Up and running</h2>
+			</section>
+			<section>
+				<h2>Install</h2>
+				<br><br><br>
+				<h4>Windows</h4>
+				<p>
+					Download from <a href="https://git-for-windows.github.io/" target="_blank">here</a> and install
+				</p>
+				<h4>Linux</h4>
+				<pre><code class="bash hljs" data-trim contenteditable>
+$ apt-get install git-all
+$ yum install git-all
+				</code></pre>
+				<h4>Mac</h4>
+				<pre><code class="bash hljs"data-trim contenteditable>
+$ xcode-select --install
+				</code></pre>
+			</section>
+			<section>
+				<h4>Config</h4>
+				<pre><code class="bash hljs" data-trim contenteditable>
 $ git config --local user.name "John Doe"
 $ git config --local user.email "john@doe.com"
-						</code></pre>
-					</section>
+				</code></pre>
+			</section>
         </section>
+<!-- End up and running -->
+<!-- Going with the flow -->
 				<section>
 					<section>
 						<h2>Going with the flow</h2>
 					</section>
 					<section>
 						<h2>A few commands</h2>
-						<pre><code class="hljs" data-trim contenteditable>
-$ git help // shows help
-$ git clone // clones a central repository into a local one
-$ git status // shows the current status for changed/new/removed files`
-$ git add // stages file(s) for commit
+						<pre><code class="bash hljs" data-trim contenteditable>
+$ git help # shows help
+$ git clone # clones a central repository into a local one
+$ git status # shows the current status for changed/new/removed files`
+$ git add # stages file(s) for commit
 $ git commit
-$ git push // publishes the changes(commits) to the central repository
-$ git pull // fetches changes from central repository
-$ git branch // shows a list of existing branches
-$ git log // shows history
-$ git merge // merges 2 branches together
+$ git push # publishes the changes(commits) to the central repository
+$ git pull # fetches changes from central repository
+$ git branch # shows a list of existing branches
+$ git log # shows history
+$ git merge # merges 2 branches together
+$ git stash # stacks unfinished changes
 						</code></pre>
 					</section>
 					<section>
-						<pre><code class="hljs" data-trim>
-// get the existing project
+						<pre><code class="bash hljs" data-trim>
+# get the existing project
 $ git checkout https://github.com/iionut/git-presentation.git
-// create workdir
+# create workdir
 $ mkdir demo
-// create a new file
+# create a new file
 $ touch demo/file.php
-// change demo/file.php content
+# change demo/file.php content
 						</code></pre>
 					</section>
 					<section>
-						<pre><code class="hljs" data-trim>
+						<pre><code class="bash hljs" data-trim>
 $ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
@@ -157,7 +172,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 					</section>
 					<section>
 						<pre>
-							<code class="hljs" data-trim>
+							<code class="bash hljs" data-trim>
 $ git add demo
 $ git status
 On branch master
@@ -179,7 +194,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 					</section>
 					<section>
 						<pre>
-							<code class="hljs" data-trim>
+							<code class="bash hljs" data-trim>
 $ git commit -m "Demo - Created new PHP script"
 [master db0d959] Demo - Created new PHP file
  1 file changed, 3 insertions(+)
@@ -201,7 +216,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 						</pre>
 					</section>
 					<section>
-						<pre><code class="hljs" data-trim>
+						<pre><code class="bash hljs" data-trim>
 $ git push origin master
 Password for 'https://iionut@github.com':
 Counting objects: 4, done.
@@ -214,340 +229,244 @@ To https://github.com/iionut/git-presentation.git
 						</code></pre>
 					</section>
 				</section>
+<!-- End going with the flow -->
 
-				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
-				</section>
-
-				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
-				</section>
-
-				<!-- Example of nested vertical slides -->
+<!-- Branches -->
 				<section>
 					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+						<h2>Branches</h2>
 					</section>
 					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+						<pre>
+							<code class="bash hljs" data-trim>
+
+$ git branch # list local branches
+* master
+
+$ git branch testing # create branch with name: "testing"
+
+$ git branch # list local branches
+* master
+  testing
+							</code>
+						</pre>
+
 					</section>
 					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
+						<div>
+							<img class="image" style="height: 400px!important;" src="https://git-scm.com/book/en/v2/book/03-git-branching/images/two-branches.png" alt="" />
+						</div>
+						<div class="fragment">
+							<img class="image" style="height: 565px;" src="https://git-scm.com/book/en/v2/book/03-git-branching/images/head-to-master.png" alt="" />
 						</div>
 					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
+					<section>
+						<pre>
+							<code class="bash hljs" data-trim>
+$ git checkout testing
+Switched to branch 'testing'
+							</code>
+						</pre>
+						<div class="fragment">
+							<img class="image" src="https://git-scm.com/book/en/v2/book/03-git-branching/images/head-to-testing.png" alt="" />
+						</div>
+					</section>
+					<section>
+						<pre>
+							<code class="hljs bash" data-trim>
+$ vim demo/test.php
+$ git commit -a -m "unit test setup"
+							</code>
+						</pre>
+						<div class="fragment">
+							<img class="image" src="https://git-scm.com/book/en/v2/book/03-git-branching/images/advance-testing.png" alt="" />
+						</div>
 					</section>
 				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
+<!-- End branches -->
+<!-- Merges and patches -->
 				<section>
-					<h2>Pretty Code</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
+					<section>
+						<h2>Merges and patches</h2>
+					</section>
+					<section>
+						<h4>Merge</h4>
+					</section>
+					<section>
+						<pre>
+							<code class="hljs bash" data-trim>
+$ git log --oneline --decorate --graph --all
+* c34bc51 (HEAD -> testing) unit test setup
+* db0d959 Demo - Created new PHP file
+							</code>
+						</pre>
 
-    var nodes = document.querySelectorAll( selector );
+						<pre class="fragment">
+							<code class="hljs bash" data-trim>
+$ git checkout master
+$ git log --oneline --decorate --graph --all
+* c34bc51 (testing) unit test setup
+* db0d959 (HEAD -> master, origin/master, origin/HEAD) Demo - Created new PHP file)
+							</code>
+						</pre>
 
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
+						<pre class="fragment">
+							<code class="hljs bash" data-trim>
+$ git merge testing
+Updating 0fb644f..c34bc51
+Fast-forward
+ demo/test.php | 3 +++
+ 1 file changed, 3 insertions(+)
+ create mode 100644 demo/test.php
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h4>Merge with conflicts</h4>
+						<ul>
+							<li>Theirs (<i>testing</i> branch)</li>
+							<li>Mine (<i>master</i> branch)</li>
+							<li>Merged (resulted file)</li>
+						</ul>
+					</section>
+					<section>
+						<h4>Rebase</h4>
+						<br><br><br>
+						<div class="fragment grow">
+							<h2 class="fragment highlight-red">For unpublished work!<br>
+							One does not <i>rebase</i> on pushed commits!</h2>
+						</div>
+					</section>
+					<section>
+						<img class="image" src="https://git-scm.com/book/en/v2/book/03-git-branching/images/basic-rebase-1.png" alt="" />
+					</section>
+					<section>
+						<pre>
+							<code class="hljs bash" data-trim>
+$ git checkout experiment
+$ git rebase master
+First, rewinding head to replay your work on top of it...
+Applying: added staged command
 
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+$ git checkout master
+$ git merge experiment
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h4>Merge</h4>
+						<img style="width:70%;" class="image" src="https://git-scm.com/book/en/v2/book/03-git-branching/images/basic-rebase-2.png" alt="" />
+						<h4>Rebase</h4>
+						<img style="width:70%;" class="image" src="https://git-scm.com/book/en/v2/book/03-git-branching/images/basic-rebase-4.png" alt="" />
+					</section>
+					<section>
+						<pre>
+							<code style="font-size: .7em; line-height: 1.1em;" class="hljs bash" data-trim>
+| * | |   2dc4f55 - Merge branch 'staging' into trend-grower-refactory (5 months ago) &lt;Liviu Iosif>
+| |\ \ \
+| | * \ \   0636269 - merge with staging (5 months ago) &lt;Liviu Iosif>
+| | |\ \ \
+| | | |/ /
+| | | * |   f7e5cea - Merge branch 'staging' into set-pin-modal-fields-agents (5 months ago) &lt;Liviu Iosif>
+| | | |\ \
+| | | | * \   7b6adac - Merge branch 'staging' into set-password-at-created-account (5 months ago) &lt;Liviu Iosif>
+| | | | |\ \
+| | | | | * \   54609e6 - merge with staging (5 months ago) &lt;Liviu Iosif>
+| | | | | |\ \
+| | | | | | * \   13df42f - Merge branch 'staging' into temptale-add-new-date-format (5 months ago) &lt;Liviu Iosif>
+| | | | | | |\ \
+| | | | | | | * \   9a7af22 - Merge branch 'staging' into cron-send-excel-imported-object-storage (5 months ago) &lt;Liviu Iosif>
+| | | | | | | |\ \
+| | | | | | | | * \   00daeab - Merge branch 'staging' into cron-send-certificates-object-storage (5 months ago) &lt;Liviu Iosif>
+| | | | | | | | |\ \
+| | | | | | | | | * \   aa2bb81 - merge with staging (5 months ago) &lt;Liviu Iosif>
+| | | | | | | | | |\ \
+| | | | | | | | | | * \   d2b8f77 - merge with staging (5 months ago) &lt;Liviu Iosif>
+| | | | | | | | | | |\ \
+| | | | | | | | | | | * \   d6d5971 - Merge branch 'staging' into report-destination-fields-defects-concat (5 months ago) &lt;Liviu Iosif>
+| | | | | | | | | | | |\ \
+| | | | | | | | | | | | * \   7964f3b - Merge branch 'staging' into price-band-info (5 months ago) &lt;Liviu Iosif>
+| | | | | | | | | | | | |\ \
+| | | | | | | | | | | | * | | 304d442 -         modified:   application/models/DbTable/Payments.php     modified:   application/models/DbTable/PriceBands2Companies.php         modified:   application/models/Payments.php     modified:   application/models/PaymentsStatusForSellers.php     modified:   application/modules/seller/controllers/FinancialsController.php     modified:   application/modules/seller/controllers/ManagementController.php     modified:   application/modules/seller/views/scripts/financials/index.phtml     modified:   application/modules/seller/views/scripts/management/list.phtml      modified:   application/views/scripts/partials/payments/company-payments-list.phtml     modified:   application/views/scripts/partials/price-bands/band-info.phtml (5 months ago) &lt;Razvan Zofota>
+| | | | | | | | | | | | * | | fa65160 - set flag in ps_sellers for payment status cron for setting flag         new file:   application/cli/cron-process-payment-status.php     modified:   application/configs/models/factory_config.php       modified:   application/js/code932/price-bands-update.js        modified:   application/models/DbTable/Sellers.php      modified:   application/models/Financials.php   new file:   application/models/PaymentsStatusForSellers.php     modified:   application/models/Sellers.php      modified:   application/modules/seller/controllers/FinancialsController.php     modified:   application/modules/seller/controllers/ManagementController.php     modified:   application/modules/seller/views/scripts/management/list.phtml      modified:   application/views/scripts/partials/price-bands/band-info.phtml (5 months ago) &lt;Razvan Zofota>
+| | | | | | | | | | | | * | | e89903b - price updates per pallets       modified:   application/configs/routes/routes_admin.php         new file:   application/js/code932/price-bands-update.js        modified:   application/library/Code932/Acl/Base.php    modified:   application/models/Financials.php   modified:   application/models/PriceBands.php   new file:   application/modules/ajax/controllers/PricePerPalletsController.php  modified:   application/modules/seller/controllers/FinancialsController.php     modified:   application/views/scripts/partials/javascript.phtml         modified:   application/views/scripts/partials/price-bands/band-info.phtml (6 months ago) &lt;Razvan Zofota>
+| | | | | | | | | | * | | | | 2354b4f - ... (5 months ago) &lt;Razvan Zofota>
+| | | | | | | | | | | |/ / /
+| | | | | | | | | | |/| | |
+| | | | | | | | | * | | | | 086f1a1 -   modified:   application/library/Code932/Traits/Exports/PdfTrait.php (5 months ago) &lt;Razvan Zofota>
+| | | | | | | | | * | | | | b3b8478 -   modified:   application/js/code932/chart-data-img.js    modified:   application/modules/ajax/controllers/ChartDataImgController.php (5 months ago) &lt;Razvan Zofota>
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h4>Cherry-pick</h4>
+					</section>
+					<section>
+						<pre>
+							<code class="hljs bash">
+$ git cherry-pick &lt;086f1a1&gt;
+							</code>
+						</pre>
+					</section>
 				</section>
-
+<!-- End merges and pathces -->
+<!-- Bonus -->
 				<section>
-					<h2>Marvelous List</h2>
+					<section>
+						<h2>Password caching</h2>
+					</section>
+					<section>
+						<pre>
+							<code class="hljs bash">
+	# only for 15 min, but can be changed
+	$ git config [--global] credential.helper cache [--timeout &lt;seconds&gt;]
+
+	# permanent, but stored on disk
+	$ git config [--global] credential.helper 'store --file &lt;credentials-file&gt;'
+
+	$ cat &lt;credentials-file&gt;
+	https://iionut:&lt;password&gt;@github.com
+							</code>
+						</pre>
+						<div>
+							<p><strong>Mac:</strong> <i>osxkeychain</i> mode (already installed)</p>
+							<p><strong>Windows:</strong> <i>wincred</i> helper (can be installed)</p>
+						</div>
+					</section>
+				</section>
+<!-- End bonus -->
+<!-- Best practices -->
+				<section>
+					<section>
+						<h2>Best practices</h2>
+						<ol>
+							<li class="fragment">Commit often</li>
+							<li class="fragment">Commit related changes</li>
+							<li class="fragment">Write clear and expressive commit messages</li>
+							<li class="fragment">Don't use only one branch</li>
+							<li class="fragment">Don't panic</li>
+							<li class="fragment">Don't change published history</li>
+							<li class="fragment">Don't commit big, unnecessary files (media, archives, .vagrant/, logs, etc.)</li>
+							<li class="fragment">Don't commit configuration/declaration files (Makefile, composer.json, etc.)</li>
+							<li class="fragment">Don't commit half-done work (stash it)</li>
+							<li class="fragment">Version control is not a backup system</li>
+							<li class="fragment">Git doesn't do anything by itself</li>
+						</ol>
+					</section>
+				</section>
+<!-- End best practices -->
+<!-- Resources -->
+				<section>
+					<h2>Learning material</h2>
 					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
+						<a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a>
+						<br>
+						<a href="https://www.atlassian.com/git/tutorials/">https://www.atlassian.com/git/tutorials/</a>
 					</ul>
 				</section>
-
+<!-- End resources -->
 				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
-
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
+					<h2>Have a good day!</h2>
 				</section>
 
 			</div>
@@ -570,7 +489,7 @@ Reveal.addEventListener( 'customevent', function() {
 				width: 1920,
 				height: 1080,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
 
 				// Optional reveal.js plugins
 				dependencies: [
