@@ -52,15 +52,15 @@
 <!-- Agenda -->
         <section class="pull-left">
             <h3>Agenda</h3>
-            <ol>
-				<li>A really short history of Git</li>
+            <ol style="width:50%;">
+				<li>A short history</li>
 				<li>How does it work</li>
                 <li>Up and running</li>
                 <li>Going with the flow</li>
 				<li>Branches</li>
                 <li>Merges and patches</li>
+                <li>Password caching</li>
                 <li>Best practices</li>
-                <li>Bonus</li>
             </ol>
         </section>
 <!-- End agenda -->
@@ -418,14 +418,14 @@ $ git cherry-pick &lt;086f1a1&gt;
 					<section>
 						<pre>
 							<code class="hljs bash">
-	# only for 15 min, but can be changed
-	$ git config [--global] credential.helper cache [--timeout &lt;seconds&gt;]
+# only for 15 min, but can be changed
+$ git config [--global] credential.helper cache [--timeout &lt;seconds&gt;]
 
-	# permanent, but stored on disk
-	$ git config [--global] credential.helper 'store --file &lt;credentials-file&gt;'
+# permanent, but stored on disk
+$ git config [--global] credential.helper 'store --file &lt;credentials-file&gt;'
 
-	$ cat &lt;credentials-file&gt;
-	https://iionut:&lt;password&gt;@github.com
+$ cat &lt;credentials-file&gt;
+https://iionut:&lt;password&gt;@github.com
 							</code>
 						</pre>
 						<div>
@@ -466,7 +466,7 @@ $ git cherry-pick &lt;086f1a1&gt;
 				</section>
 <!-- End resources -->
 				<section>
-					<h2>Have a good day!</h2>
+					<h2>Good day!</h2>
 				</section>
 
 			</div>
@@ -489,7 +489,7 @@ $ git cherry-pick &lt;086f1a1&gt;
 				width: 1920,
 				height: 1080,
 
-				transition: 'convex', // none/fade/slide/convex/concave/zoom
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
 				// Optional reveal.js plugins
 				dependencies: [
