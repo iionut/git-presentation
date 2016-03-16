@@ -56,11 +56,11 @@
 				<li>A short history</li>
 				<li>How does it work</li>
                 <li>Up and running</li>
+				<li>Workflows</li>
                 <li>Going with the flow</li>
 				<li>Branches</li>
                 <li>Merges and patches</li>
                 <li>Password caching</li>
-				<li>Workflows</li>
                 <li>Best practices</li>
             </ol>
         </section>
@@ -123,6 +123,29 @@ $ git config --local user.email "john@doe.com"
 			</section>
         </section>
 <!-- End up and running -->
+<!-- Workflows -->
+				<section>
+					<section>
+						<h2>Workflow guidelines</h2>
+					</section>
+					<section>
+						<h4>Centralized workflow</h4>
+						<img class="image" src="https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/centralized-workflow/01.svg" alt="" />
+					</section>
+					<section>
+						<h4>Feature branch workflow</h4>
+						<img class="image" src="https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/feature-branch-workflow/01.svg" alt="" />
+					</section>
+					<section>
+						<h4>Gitflow workflow</h4>
+						<img class="image" src="https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/gitflow-workflow/01.svg" alt="" />
+					</section>
+					<section>
+						<h4>Forking workflow</h4>
+						<img class="image" src="https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/forking-workflow/01.svg" alt="" />
+					</section>
+				</section>
+<!-- End workflows -->
 <!-- Going with the flow -->
 				<section>
 					<section>
@@ -130,7 +153,7 @@ $ git config --local user.email "john@doe.com"
 					</section>
 					<section>
 						<h2>A few commands</h2>
-						<pre><code class="bash hljs" data-trim contenteditable>
+						<pre><code style="font-size: .8em!important;" class="bash hljs" data-trim contenteditable>
 $ git help # shows help
 $ git clone # clones a central repository into a local one
 $ git status # shows the current status for changed/new/removed files`
@@ -357,7 +380,8 @@ $ git merge experiment
 						<img style="width:70%;" class="image" src="https://git-scm.com/book/en/v2/book/03-git-branching/images/basic-rebase-4.png" alt="" />
 					</section>
 					<section>
-						<pre>
+						<h4>Something went wrong</h4>
+						<pre class="fragment">
 							<code style="font-size: .6em; line-height: 1.1em;" class="hljs bash" data-trim>
 | * | |   2dc4f55 - Merge branch 'staging' into trend-grower-refactory (5 months ago) &lt;Liviu Iosif>
 | |\ \ \
@@ -433,30 +457,6 @@ https://iionut:&lt;password&gt;@github.com
 					</section>
 				</section>
 <!-- End bonus -->
-
-<!-- Workflows -->
-				<section>
-					<section>
-						<h2>Workflow guidelines</h2>
-					</section>
-					<section>
-						<h4>Centralized workflow</h4>
-						<img class="image" src="https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/centralized-workflow/01.svg" alt="" />
-					</section>
-					<section>
-						<h4>Feature branch workflow</h4>
-						<img class="image" src="https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/feature-branch-workflow/01.svg" alt="" />
-					</section>
-					<section>
-						<h4>Gitflow workflow</h4>
-						<img class="image" src="https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/gitflow-workflow/01.svg" alt="" />
-					</section>
-					<section>
-						<h4>Forking workflow</h4>
-						<img class="image" src="https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/forking-workflow/01.svg" alt="" />
-					</section>
-				</section>
-<!-- End workflows -->
 
 <!-- Best practices -->
 				<section style="font-size:0.9em!important;">
