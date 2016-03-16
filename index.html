@@ -60,6 +60,7 @@
 				<li>Branches</li>
                 <li>Merges and patches</li>
                 <li>Password caching</li>
+				<li>Workflows</li>
                 <li>Best practices</li>
             </ol>
         </section>
@@ -80,7 +81,7 @@
 					</section>
 					<section>
 						<h4>Snapshots (Git)</h4>
-						<img src="https://git-scm.com/book/en/v2/book/01-introduction/images/snapshots.png" alt="" />
+						<img class="image" src="https://git-scm.com/book/en/v2/book/01-introduction/images/snapshots.png" alt="" />
 					</section>
 					<section>
 						<img class="image" src="https://upload.wikimedia.org/wikipedia/commons/2/29/Git_data_flow.png" alt="" style="width: 80%;" />
@@ -253,12 +254,8 @@ $ git branch # list local branches
 
 					</section>
 					<section>
-						<div>
-							<img class="image" style="height: 400px!important;" src="https://git-scm.com/book/en/v2/book/03-git-branching/images/two-branches.png" alt="" />
-						</div>
-						<div class="fragment">
-							<img class="image" style="height: 565px;" src="https://git-scm.com/book/en/v2/book/03-git-branching/images/head-to-master.png" alt="" />
-						</div>
+						<img class="image" style="height: 280px;" src="https://git-scm.com/book/en/v2/book/03-git-branching/images/two-branches.png" alt="" />
+						<img class="image" style="height: 380px;" src="https://git-scm.com/book/en/v2/book/03-git-branching/images/head-to-master.png" alt="" />
 					</section>
 					<section>
 						<pre>
@@ -268,7 +265,7 @@ Switched to branch 'testing'
 							</code>
 						</pre>
 						<div class="fragment">
-							<img class="image" src="https://git-scm.com/book/en/v2/book/03-git-branching/images/head-to-testing.png" alt="" />
+							<img class="image" style="height:500px;" src="https://git-scm.com/book/en/v2/book/03-git-branching/images/head-to-testing.png" alt="" />
 						</div>
 					</section>
 					<section>
@@ -310,7 +307,7 @@ $ git log --oneline --decorate --graph --all
 							</code>
 						</pre>
 
-						<pre class="fragment">
+						<pre class="fragment" style="margin-top:-20px;">
 							<code class="hljs bash" data-trim>
 $ git merge testing
 Updating 0fb644f..c34bc51
@@ -361,7 +358,7 @@ $ git merge experiment
 					</section>
 					<section>
 						<pre>
-							<code style="font-size: .7em; line-height: 1.1em;" class="hljs bash" data-trim>
+							<code style="font-size: .6em; line-height: 1.1em;" class="hljs bash" data-trim>
 | * | |   2dc4f55 - Merge branch 'staging' into trend-grower-refactory (5 months ago) &lt;Liviu Iosif>
 | |\ \ \
 | | * \ \   0636269 - merge with staging (5 months ago) &lt;Liviu Iosif>
@@ -404,7 +401,8 @@ $ git merge experiment
 					<section>
 						<pre>
 							<code class="hljs bash">
-$ git cherry-pick &lt;086f1a1&gt;
+$ git cherry-pick &lt;commit hash&gt;
+$ git cherry-pick 086f1a1
 							</code>
 						</pre>
 					</section>
@@ -415,7 +413,7 @@ $ git cherry-pick &lt;086f1a1&gt;
 					<section>
 						<h2>Password caching</h2>
 					</section>
-					<section>
+					<section style="font-size: .8em!important;">
 						<pre>
 							<code class="hljs bash">
 # only for 15 min, but can be changed
@@ -435,24 +433,47 @@ https://iionut:&lt;password&gt;@github.com
 					</section>
 				</section>
 <!-- End bonus -->
-<!-- Best practices -->
+
+<!-- Workflows -->
 				<section>
 					<section>
-						<h2>Best practices</h2>
-						<ol>
-							<li class="fragment">Commit often</li>
-							<li class="fragment">Commit related changes</li>
-							<li class="fragment">Write clear and expressive commit messages</li>
-							<li class="fragment">Don't use only one branch</li>
-							<li class="fragment">Don't panic</li>
-							<li class="fragment">Don't change published history</li>
-							<li class="fragment">Don't commit big, unnecessary files (media, archives, .vagrant/, logs, etc.)</li>
-							<li class="fragment">Don't commit configuration/declaration files (Makefile, composer.json, etc.)</li>
-							<li class="fragment">Don't commit half-done work (stash it)</li>
-							<li class="fragment">Version control is not a backup system</li>
-							<li class="fragment">Git doesn't do anything by itself</li>
-						</ol>
+						<h2>Workflow guidelines</h2>
 					</section>
+					<section>
+						<h4>Centralized workflow</h4>
+						<img class="image" src="https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/centralized-workflow/01.svg" alt="" />
+					</section>
+					<section>
+						<h4>Feature branch workflow</h4>
+						<img class="image" src="https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/feature-branch-workflow/01.svg" alt="" />
+					</section>
+					<section>
+						<h4>Gitflow workflow</h4>
+						<img class="image" src="https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/gitflow-workflow/01.svg" alt="" />
+					</section>
+					<section>
+						<h4>Forking workflow</h4>
+						<img class="image" src="https://www.atlassian.com/git/images/tutorials/collaborating/comparing-workflows/forking-workflow/01.svg" alt="" />
+					</section>
+				</section>
+<!-- End workflows -->
+
+<!-- Best practices -->
+				<section style="font-size:0.9em!important;">
+					<h2>Best practices</h2>
+					<ol>
+						<li class="fragment">Commit often</li>
+						<li class="fragment">Commit related changes</li>
+						<li class="fragment">Write clear and expressive commit messages</li>
+						<li class="fragment">Don't use only one branch</li>
+						<li class="fragment">Don't panic</li>
+						<li class="fragment">Don't change published history</li>
+						<li class="fragment">Don't commit big, unnecessary files (media, archives, .vagrant/, logs, etc.)</li>
+						<li class="fragment">Don't commit configuration/declaration files (Makefile, composer.json, etc.)</li>
+						<li class="fragment">Don't commit half-done work (stash it)</li>
+						<li class="fragment">Version control is not a backup system</li>
+						<li class="fragment">Git doesn't do anything by itself</li>
+					</ol>
 				</section>
 <!-- End best practices -->
 <!-- Resources -->
@@ -486,8 +507,8 @@ https://iionut:&lt;password&gt;@github.com
 				history: true,
 				center: true,
 
-				width: 1920,
-				height: 1080,
+				// width: 1920,
+				// height: 1080,
 
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 

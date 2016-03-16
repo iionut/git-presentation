@@ -8,10 +8,17 @@
 
 .reveal pre code {
   max-height: 100%!important;
+  max-width: 100%!important;
+}
+
+.slides {
+    width: 80%!important;
 }
 
 pre {
-  font-size: 1em!important;
+  font-size: .7em!important;
+  /*padding:0!important;
+  margin:0!important;*/
 }
 
 img.image {
