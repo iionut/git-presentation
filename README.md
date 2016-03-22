@@ -1,8 +1,8 @@
 Requirements:
 
-- nodejs
-- bower
-- grunt
+1. nodejs
+2. bower
+3. grunt
 
 
 		$ git clone https://github.com/iionut/git-presentation.git
