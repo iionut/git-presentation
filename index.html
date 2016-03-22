@@ -278,6 +278,9 @@ $ git branch # list local branches
 					</section>
 					<section>
 						<img class="image" style="height: 280px;" src="https://git-scm.com/book/en/v2/book/03-git-branching/images/two-branches.png" alt="" />
+
+					</section>
+					<section>
 						<img class="image" style="height: 380px;" src="https://git-scm.com/book/en/v2/book/03-git-branching/images/head-to-master.png" alt="" />
 					</section>
 					<section>
@@ -287,9 +290,10 @@ $ git checkout testing
 Switched to branch 'testing'
 							</code>
 						</pre>
-						<div class="fragment">
-							<img class="image" style="height:500px;" src="https://git-scm.com/book/en/v2/book/03-git-branching/images/head-to-testing.png" alt="" />
-						</div>
+
+					</section>
+					<section>
+						<img class="image" style="height:500px;" src="https://git-scm.com/book/en/v2/book/03-git-branching/images/head-to-testing.png" alt="" />
 					</section>
 					<section>
 						<pre>
@@ -298,9 +302,10 @@ $ vim demo/test.php
 $ git commit -a -m "unit test setup"
 							</code>
 						</pre>
-						<div class="fragment">
-							<img class="image" src="https://git-scm.com/book/en/v2/book/03-git-branching/images/advance-testing.png" alt="" />
-						</div>
+
+					</section>
+					<section>
+						<img class="image" src="https://git-scm.com/book/en/v2/book/03-git-branching/images/advance-testing.png" alt="" />
 					</section>
 				</section>
 <!-- End branches -->
@@ -321,7 +326,10 @@ $ git log --oneline --decorate --graph --all
 							</code>
 						</pre>
 
-						<pre class="fragment">
+
+					</section>
+					<section>
+						<pre>
 							<code class="hljs bash" data-trim>
 $ git checkout master
 $ git log --oneline --decorate --graph --all
@@ -330,7 +338,7 @@ $ git log --oneline --decorate --graph --all
 							</code>
 						</pre>
 
-						<pre class="fragment" style="margin-top:-20px;">
+						<pre>
 							<code class="hljs bash" data-trim>
 $ git merge testing
 Updating 0fb644f..c34bc51
@@ -353,8 +361,8 @@ Fast-forward
 						<h4>Rebase</h4>
 						<br><br><br>
 						<div class="fragment grow">
-							<h2 class="fragment highlight-red">For unpublished work!<br>
-							One does not <i>rebase</i> on pushed commits!</h2>
+							<h3 class="fragment highlight-red">For unpublished work!<br>
+							One does not <i>rebase</i> on pushed commits!</h3>
 						</div>
 					</section>
 					<section>
@@ -376,6 +384,9 @@ $ git merge experiment
 					<section>
 						<h4>Merge</h4>
 						<img style="width:70%;" class="image" src="https://git-scm.com/book/en/v2/book/03-git-branching/images/basic-rebase-2.png" alt="" />
+
+					</section>
+					<section>
 						<h4>Rebase</h4>
 						<img style="width:70%;" class="image" src="https://git-scm.com/book/en/v2/book/03-git-branching/images/basic-rebase-4.png" alt="" />
 					</section>
