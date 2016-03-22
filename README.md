@@ -5,11 +5,13 @@ Requirements:
 3. grunt
 
 
+```sh
 		$ git clone https://github.com/iionut/git-presentation.git
 		$ cd git-presentation
 		$ npm install
 		$ bower install
 		$ grunt serve
+```
 
 Go to [http://localhost:8000](http://localhost:8000)
 
